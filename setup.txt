@@ -1,0 +1,19 @@
+installation
+
+To install TypeScript, go to the official site of TypeScript ( http://www.typescriptlang.org/ ) and follow the steps mentioned there to download TypeScript.
+
+
+npm install typescript --save-dev
+npx tsc
+npm i �g typescript
+tsc -v
+npm install -g typescript
+
+
+
+create file
+
+file_name.ts
+
+tsc file_name.ts
+        creates file_name.cs
