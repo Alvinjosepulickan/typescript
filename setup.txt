@@ -16,4 +16,5 @@ create file
 file_name.ts
 
 tsc file_name.ts
-        creates file_name.cs
+        creates file_name.js
+node file_name.js
