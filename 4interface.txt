@@ -1,0 +1,66 @@
+interface
+    An interface in TypeScript is used to define contracts within the code.
+    Interfaces are used to enforce type checking by defining contracts.
+    It is a collection of properties and method declarations.
+    Interfaces are not supported in JavaScript and will get removed from the generated JavaScript.
+    Interfaces are mainly used to identify issues upfront as we proceed with coding.
+
+
+
+
+    interface InterfaceName{
+        properties;
+        methods;
+
+    }
+
+
+    Duck Typing
+    Duck-Typing is a rule for checking the type compatibility for more complex variable types.
+    TypeScript compiler uses the duck-typing method to compare one object with the other by comparing that both the objects have the same properties with the same data types.
+    TypeScript interface uses the same duck typing method to enforce type restriction. If an object that has been assigned as an interface contains more properties than the interface mentioned properties, it will be accepted as an interface type and additional properties will be ignored for type checking
+
+
+
+extending interface
+    interface Category{
+        CategoryName:string;
+    }
+    interface Product{
+        ProductId:number;
+        ProductName:string;
+    }
+    interface ProductList extends Category,Product{
+        List:Array<string>
+    }
+
+    let productDetails: ProductList{
+        CategoryName:"Mobile";
+        ProductId:100;
+        ProductName:"LG";
+        List:["Apple","Samsung"]
+    }
+
+
+
+class types
+    Make use of the interface to define class types to explicitly enforce that a class meets a particular contract. Use implements keyword to implement interface inside a class. 
+    To enforce interface type on a class, while instantiating an object of a class declare it using the interface type.
+    The only interface declared functions and properties will be available with the instantiated object.
+
+    interface Product{
+        ProductId:number;
+        ProductName:string;
+        getProductName(id:number):string;
+    }
+    class Gadget implements Product{
+        ProductId: number;
+        ProductName: string;
+        constructor(productId:number,productName:string) {
+            this.ProductId=productId;
+            this.ProductName=productName;
+        }
+        getProductName(id:number):string{
+            return this.ProductName;
+        }
+    }
