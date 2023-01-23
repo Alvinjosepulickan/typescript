@@ -1,0 +1,38 @@
+function functionName(name: string, age:number):string{
+    return `Name is ${name} and Age is ${age}`
+}
+console.log(functionName("Alvin",25));
+
+
+
+arrow function
+
+    var getProductDetails=(productId: number):string=>{return `Product is ${productId}`}
+
+
+types of functions
+    Function types are a combination of parameter types and return type. Functions can be assigned to variables.
+    While assigning a function to a variable make sure that the variable declaration is the same as the assigned function’s return type.
+
+
+    function getProductDetails(productName:string):string{
+        return productName;
+    }
+    let productName: string=getProductDetails(productName)
+
+optional parameter
+    ?
+Default parameter
+    =
+
+
+Rest parameter
+    Rest Parameter is used to pass multiple values to a single parameter of a function. It accepts zero or more values for a single parameter.
+    Rest Parameter should be declared as an array.
+    Precede the parameter to be made as rest parameter with triple dots.
+    Rest parameter should be the last parameter in the function parameter list.
+
+function nameFunc(age:number,...names:string[]){
+    console.log(names)
+}
+nameFunc(2,"Ali","Imran")
