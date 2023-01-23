@@ -1,0 +1,52 @@
+Declaring variable
+    var
+    let
+    const
+
+
+
+    Type Annotation
+
+    
+    types of datatype
+        boolean ->  true/false
+            let shoW: boolean=true;
+        number  -> numeric value
+            let productId: number=1014;
+        string
+            let productName: string="Phone";
+            let message: string=`productName is ${productName}`
+        any
+            ny type is used to declare a variable whose type can be determined dynamically at runtime with the value supplied to it
+            let screenSize: any;
+            screenSize=13.3
+            screenSize="5.5 inch" 
+        void
+            void type represents undefined as the value
+            let product:void= undefined;
+    
+
+enum
+    enum Name{value1,value2,value3}
+    eg: enum MobilePrice{Red=500,Black=100}
+        console.log(MobilePrice.Red);
+
+
+Arrays
+    let manufactu: string[]=["samsung","sony","LG"];
+    let manu : Array<string>=["samsung","sony","LG"];
+    let product any[]=[1,"2",true];
+
+    add element
+        manu.push("apple");
+        manu[4]="xiaomi";
+    remove element
+        manu.pop();
+        manu.splice(1,3)
+
+
+Tuple
+    kind of array which accepts more than one predefined type of data. Arrays are used to represent a collection of similar objects, whereas tuples are used to represent a collection of different objects.
+
+    let custInfo: [string, Customer, number];
+    custInfo=["1324",new Customer(),10];
