@@ -1,0 +1,36 @@
+Decorator is used for providing metadata and they are used to specify extra behavior of a class, method, or property of a class.
+Decorators are used for declarative programming.
+Decorators are used for implementing cross-cutting concerns.
+
+A Class Decorator is used just before a class declaration.
+It can be used to modify, observe, or replace any class definition.
+The class decorator can be applied to constructor of user defined class. 
+The class decorator at runtime overrides the original constructor logic with a new one, returns the only argument.
+You can log, modify, or replace the original constructor within the class decorator function.
+
+
+
+function invoke(constructor:Function) {
+    // the new constructor behaviour
+   const newconstructor: any = function(...args) {
+      this.productId = 875;
+      this.productName = 'Tablet';
+      };
+  // return newconstructor will override the original constructor
+   return newconstructor;
+ }
+@invoke
+class Product {
+    public productId: number;
+    public productName: string;
+    constructor(productId: number, productName: string) {
+        this.productId = productId;
+        this.productName = productName;
+        }
+}
+const p = new Product(326, 'Mobile');
+console.log(`Product id is: ${p.productId}`);
+console.log(`Product name is : ${p.productName}`);
+ 
+for running
+tsc --experimentalDecorators --target ES5 Decorator.ts
