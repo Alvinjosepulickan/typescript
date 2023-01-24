@@ -1,0 +1,30 @@
+function Display<T>(input:T){
+    console.log(input)
+}
+
+
+generic array
+    Array<T>
+
+
+Generic class
+    class Product<T>{
+        public  productName :T ;
+        constructor(name:T){
+            this.productName=name;
+        }
+    }
+    function printData<T>( data: T): T {
+    return data;
+    }
+
+    // variable declaration to access Generic function
+    const stringData: string = printData<string>('Hello Generics');
+    let productData: Product<String> = printData<Product<String>>(new Product<String>("Phone"));
+    // line to populate the result of Generic function on console.
+    console.log('String data ' + stringData);
+    console.log(productData);
+
+Generic interface
+
+    interface<>
