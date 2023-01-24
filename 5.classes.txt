@@ -1,0 +1,100 @@
+Classes are used to create reusable components. Till the ES5 version of JavaScript, you do not have a class concept as such. For implementing reusable components, use functions and prototype-based inheritance. TypeScript provides an option for the developers to use object-oriented programming with the help of classes.
+In the Mobile Cart application, you can use a class to define the product and create various objects of different products. In the below screen, creating different objects of product and rendering the details
+
+Class is a template from which objects can be created.
+It provides behavior and state storage.
+It is meant for implementing reusable functionality.
+Use a class keyword to create a class.
+
+
+A constructor is a function that gets executed automatically whenever an instance of a class is created using a new keyword.
+    To create a constructor, a function with the name as a "constructor" is used.
+    A class can hold a maximum of one constructor method per class. 
+    You can use optional parameters with a constructor function as well.
+
+Access modifiers
+    public    :Default, accessable outside
+    private   :not accessable outside class
+    protected :accessable within classs and inherited class.
+
+static
+
+properties and methods
+    instead of creating instance variable assign directly from constructor
+    
+    constructor(private productId: number,private productPrice: number) {
+    }
+
+    create productId and productPrice properties
+
+
+getters and setters(tsc --target ES5 classes.ts)
+
+    class Product{
+        private productId :number
+        get ProductId():number{
+            return this.productId;
+        }
+        set ProductId(id :number){
+            this.productId=id;
+        }
+    }
+    var j:Product=new Product();
+    j.ProductId=10;
+    console.log(j.ProductId)
+
+
+
+inheritance
+    class A extends Class B
+
+    class Product{
+        protected productId:number;
+        constructor(productId: number) {
+            this.productId=productId;
+        }
+        public getProductId(){
+            console.log("this.productId is ");
+        }
+    }
+    class Gadget extends Product{
+        protected productName:string;
+        constructor(productName:string) {
+            super(1);
+            this.productName=productName
+        }
+        public getProductId(){
+            super.getProductId();
+            console.log(this.productId);
+        }
+    }
+    var j=new Gadget("phone");
+    j.getProductId();
+
+
+abstract class
+    Abstract classes are base classes that may not be instantiated.
+    An abstract class can be created using abstract keyword.
+    Abstract methods within an abstract class are methods declared with abstract keyword and does not contain implementation.
+    They must be implemented inside the derived classes.
+    Abstract classes can contain both abstract methods and its implementations.
+
+    abstract class Product{
+        protected productId:number;
+        constructor(productId: number) {
+            this.productId=productId;
+        }
+        abstract  getProductId();
+    }
+    class Gadget extends Product{
+        protected productName:string;
+        constructor(productName:string) {
+            super(1);
+            this.productName=productName
+        }
+        public getProductId(){
+            console.log(this.productId);
+        }
+    }
+    var j=new Gadget("phone");
+    j.getProductId();
