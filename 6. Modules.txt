@@ -1,0 +1,29 @@
+Modules
+    Modules help us in grouping a set of functionalities under a common name. The content of modules cannot be accessible outside unless exported.
+    recede export keyword to the function, class, interface, etc.. which you need to export from a module.
+
+    module_demo.ts
+    module_import.ts
+
+    The constructs of a module can be exported by one of the below approaches:
+        1. Adding an export keyword in front of a function or a class or an interface
+        2. Adding an export keyword to a block of statements
+    
+    Using the import keyword, you can import a module within another module or another TypeScript file. 
+    Provide the file name as the module name while importing.
+    Once the module is imported, make use of the classes and other constructs exported from the module.
+
+    import{utility,Category} from "./demo.ts"
+    let util=new utility();
+    let price=util.CalculateAmount(10,10);
+
+Module formatters and loaders
+    Module format is the syntax that is used to define a module in JavaScript.
+    Modules in TypeScript can be compiled to one of the module formats given below:
+        AMD: Asynchronous Module Definition
+        CommonJS
+        ES2015
+        system
+        UMD: Universal Module Definition
+
+    tsc filename.ts --module ES2015

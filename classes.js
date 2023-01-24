@@ -100,17 +100,28 @@ class Gadget extends Product{
 var j=new Gadget("phone");
 j.getProductId();
 */
-var Demo = /** @class */ (function () {
-    function Demo() {
-        this.n = 9;
-    }
-    Demo.prototype.check = function () {
-        if (this.n == 9) {
-            var n = 10;
-            console.log(n);
-        }
-    };
-    return Demo;
-}());
-var demoObject = new Demo();
+/* wired problem
+class Demo {
+    n :number= 9;
+     check(){
+           if(this.n==9){
+           let n:number= 10;
+               console.log(n);
+           }
+     }
+   }
+let demoObject=new Demo();
 demoObject.check();
+*/
+//static methods and properties
+/*
+class Product{
+    static productId:number;
+    constructor(productId: number) {
+        //this.productId=productId;
+    }
+    public static getProductId(){
+        console.log("this.productId is ");
+    }
+}
+*/ 

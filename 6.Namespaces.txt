@@ -1,0 +1,48 @@
+Modules and Namespaces are useful in grouping functionalities under a common name.
+The main use is reusability.
+Code can be reused by importing modules or namespaces in other files.
+Namespaces are used for namespace resolution and are suitable for the development of a smaller application.
+In larger-scale applications, they can be used to achieve modularity.
+
+
+Namespace
+    Namespace is used to group functions, classes, or interfaces under a common name.
+    The content of namespaces is hidden by default unless they are exported.
+    Use nested namespaces if required.
+    The function or any construct which is not exported cannot be accessible outside the namespace.
+
+
+    creating and using namespace
+
+        namespace BaseNamespace{
+            export namespace ChildNamespace{
+                export function CalculateAmount(price:number,quantity:number):number{
+                    return price * quantity;
+                }
+            }
+            export function CalculatePrice(price:number,quantity:number):number{
+                return price * quantity;
+            }
+            function newFun():void{
+                console.log("newFunc");
+            }
+        }
+
+
+        ///<reference path="./BaseNamespace.ts"/>
+        import util= BaseNamespace.ChildNamespace;
+        let amount=util.CalculateAmount(10,10);
+        console.log(amount);
+        import util1=BaseNamespace;
+        console.log(util1.CalculatePrice(10,0.05));
+
+    To import the namespace and use it, make use of the triple slash reference tag.
+    The file in which the namespace is declared and the file which uses the namespace to be compiled together. 
+    It is preferable to group the output together in a single file. You have an option to do that by using the --outFile keyword.
+
+
+    BaseNamespace.ts,useNameSpace.ts =>FinalFileName.js
+    tsc --outFile FinalFileName.js namespace1.ts namespace2.ts
+
+
+
