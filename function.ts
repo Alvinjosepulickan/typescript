@@ -50,7 +50,12 @@ function nameFunc(age:number,...names:string[]){
 nameFunc(2,"Ali","Imran")
 */
 function add(num1:number,num2?:number) {
+    
     if(num2){
+        function addnumbers(num1:number,num2:number){
+            console.log(num1+num2);
+        }
+        addnumbers(num1,10);
         return num1+num2;
     }
     return num1;
